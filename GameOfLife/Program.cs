@@ -82,17 +82,9 @@ namespace GameOfLife
                     bool currentCellIsDead = !currentBoardState[y][x];
                     bool currentCellFate = false;
 
-                    if (currentCellIsAlive && numberOfAliveNeighbors < 2)
-                    {
-                        currentCellFate = false;
-                    }
-                    else if (currentCellIsAlive && (numberOfAliveNeighbors == 2 || numberOfAliveNeighbors == 3))
+                    if (currentCellIsAlive && (numberOfAliveNeighbors == 2 || numberOfAliveNeighbors == 3))
                     {
                         currentCellFate = true;
-                    }
-                    else if (currentCellIsAlive && numberOfAliveNeighbors > 3)
-                    {
-                        currentCellFate = false;
                     }
                     else if (currentCellIsDead && numberOfAliveNeighbors == 3)
                     {
